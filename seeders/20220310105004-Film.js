@@ -1,42 +1,46 @@
-'use strict';
+"use strict";
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-const date1 = new Date(2009, 8, 19);
-const date2 = new Date(1994, 10, 5);
-const date3 = new Date(2003, 12, 17);
+  async up(queryInterface, Sequelize) {
+    const date1 = new Date(1996, 5, 6);
+    const date2 = new Date(1994, 6, 7);
+    const date3 = new Date(1995, 7, 8);
 
-    await queryInterface.bulkInsert('Films', [{
-      name: "INGLOURIOUS BASTERDS",
-      description:"Dans la France occupée de 1940, Shosanna Dreyfus assiste à l\'exécution de sa famille tombée entre les mains du colonel nazi Hans Landa. Shosanna s\'échappe de justesse et s\'enfuit à Paris où elle se construit une nouvelle identité en devenant exploitante d\'une salle de cinéma.Quelque part ailleurs en Europe, le lieutenant Aldo Raine forme un groupe de soldats juifs américains pour mener des actions punitives particulièrement sanglantes contre les nazis. \"Les bâtards\", nom sous lequel leurs ennemis vont apprendre à les connaître, se joignent à l\'actrice allemande et agent secret Bridget von Hammersmark pour tenter d\'éliminer les hauts dignitaires du Troisième Reich. Leurs destins vont se jouer à l\'entrée du cinéma où Shosanna est décidée à mettre à exécution une vengeance très personnelle...",
-      date:date1,
-      note:4,
-      duration:153,
-      createdAt: new Date(),
-      updatedAt: new Date()
-  }, {
-    name: "FORREST GUMP",
-    description:"Quelques décennies d'histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l'étrange odyssée d'un homme simple et pur, Forrest Gump.",
-    date:date2,
-    note:5,
-    duration:140,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  }, {
-    name: "LE SEIGNEUR DES ANNEAUX : LE RETOUR DU ROI",
-    description:"Les armées de Sauron ont attaqué Minas Tirith, la capitale de Gondor. Jamais ce royaume autrefois puissant n'a eu autant besoin de son roi. Mais Aragorn trouvera-t-il en lui la volonté d'accomplir sa destinée ? Tandis que Gandalf s'efforce de soutenir les forces brisées de Gondor, Théoden exhorte les guerriers de Rohan à se joindre au combat. Mais malgré leur courage et leur loyauté, les forces des Hommes ne sont pas de taille à lutter contre les innombrables légions d'ennemis qui s'abattent sur le royaume...",
-    date:date3,
-    note:4,
-    duration:201,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  }]);
-
+    await queryInterface.bulkInsert("Films", [
+      {
+        name: "Dracula",
+        description:
+          "ransylvanie, 1462. Vlad Dracul laisse la belle Elisabeta pour aller guerroyer contre l'envahisseur turc. Revenu victorieux du combat, il découvre le corps inanimé de sa femme, qui s'est suicidée à la fausse nouvelle de sa mort. Eperdu de douleur, il abjure sa foi et en appelle aux puissances du sang pour retrouver sa bien-aimée. Quatre siècles plus tard, Jonathan Harker, un jeune notaire, se rend au château du comte Dracula. Le propriétaire des lieux semble fasciné par le portrait de Mina, l'épouse de Harker, en qui il voit la réincarnation de son amour perdu.",
+        date: date1,
+        note: 5,
+        duration: 150,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: "Seven",
+        description:
+          "Sur le point de prendre sa retraite, l'inspecteur William Somerset fait équipe avec le jeune David Mills. Tous deux mènent l'enquête sur une série de meurtres particulièrement étranges. En effet, un mystérieux serial killer, se faisant appeler John Doe, tue ses victimes selon les sept péchés capitaux.",
+        date: date2,
+        note: 5,
+        duration: 140,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: "Le Seigneur des Anneaux - La Communauté de l'anneau",
+        description:
+          "Le jeune hobbit Frodon Sacquet hérite d'un anneau. Il s'agit de l'Anneau Unique, instrument de pouvoir absolu qui permettrait à Sauron, de régner sur la Terre du Milieu et de réduire en esclavage ses peuples... A moins que Frodon et ses fidèles compagnons ne parviennent à emporter l'Anneau jusqu'en Mordor, lieu où il a été forgé, et à le détruire pour toujours.",
+        date: date3,
+        note: 5,
+        duration: 201,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ]);
   },
 
-  async down (queryInterface, Sequelize) {
-
-    await queryInterface.bulkDelete('Films', null, {});
-
-  }
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete("Films", null, {});
+  },
 };
